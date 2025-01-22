@@ -1,0 +1,382 @@
+﻿<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio de Saad Loucifi</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <!-- AOS Library -->
+    <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+
+    <style>
+        /* Styles globaux */
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: #2a2a2a; /* Fond sombre */
+            color: #f0f0f0; /* Texte clair */
+            margin: 0;
+            padding: 0;
+        }
+
+        h1, h2, h3 {
+            font-weight: bold;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        /* Navbar */
+        .navbar {
+            background-color: #1c1c1c; /* Sombre, proche du noir */
+            padding: 10px 20px;
+        }
+
+        .navbar-brand span {
+            font-weight: bold;
+            color: #e74c3c; /* Rouge */
+            font-size: 1.5rem;
+        }
+
+        .nav-link {
+            color: #fff !important;
+            padding: 10px 15px;
+            font-size: 1.1rem;
+        }
+
+            .nav-link:hover {
+                background-color: #c0392b; /* Rouge plus foncé */
+                border-radius: 5px;
+            }
+
+        /* Section En-tête */
+        header {
+            text-align: center;
+            padding: 60px 20px;
+            color: #fff;
+            background: linear-gradient(135deg, #2a2a2a, #1c1c1c); /* Bloody Moon dégradé */
+        }
+
+            header .card {
+                display: inline-block;
+                width: 80%;
+                background-color: #1c1c1c;
+                border-radius: 15px;
+                padding: 30px;
+                box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
+                color: white;
+            }
+
+            header h1 {
+                font-size: 2.5rem;
+            }
+
+            header p {
+                font-size: 1.1rem;
+            }
+
+        /* Section Hello, Here's who I am */
+        #about {
+            text-align: center;
+            padding: 60px 20px;
+            color: #fff;
+            background: linear-gradient(135deg, #1c1c1c, #2a2a2a); /* Gradients sombres */
+        }
+
+            #about h2 {
+                font-size: 2.5rem;
+                margin-bottom: 20px;
+            }
+
+            #about p {
+                font-size: 1.2rem;
+                margin-bottom: 30px;
+            }
+
+            #about .download-btn {
+                margin-top: 20px;
+                padding: 10px 20px;
+                background-color: #e74c3c;
+                color: #fff;
+                border: none;
+                font-size: 1.1rem;
+                cursor: pointer;
+                border-radius: 5px;
+            }
+
+                #about .download-btn:hover {
+                    background-color: #c0392b; /* Rouge plus foncé */
+                }
+
+        /* Section Compétences */
+        .section-title {
+            text-align: center;
+            margin-bottom: 40px;
+            color: #e74c3c; /* Rouge */
+        }
+
+        .card {
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            border-radius: 10px;
+            border: none;
+            margin-bottom: 30px;
+            background: #34495e; /* Couleur sombre, plus claire que le fond */
+            color: #fff;
+            transition: transform 0.3s ease;
+        }
+
+            .card:hover {
+                transform: translateY(-10px);
+                background-color: #1c1c1c; /* Sombre au survol */
+            }
+
+        .card-body h5 {
+            font-weight: bold;
+            color: #e74c3c; /* Rouge */
+        }
+
+        /* Section Contact */
+        #contact {
+            background: linear-gradient(135deg, #2a2a2a, #1c1c1c);
+            color: #fff;
+            padding: 60px 20px;
+            border-radius: 10px;
+            box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.2);
+        }
+
+            #contact form {
+                max-width: 600px;
+                margin: 0 auto;
+            }
+
+                #contact form button {
+                    background: #e74c3c; /* Rouge */
+                    color: #fff;
+                    border: none;
+                }
+
+                    #contact form button:hover {
+                        background-color: #c0392b; /* Rouge plus foncé */
+                    }
+
+        /* Footer */
+        footer {
+            background: #1c1c1c;
+            color: #fff;
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        /* Social Media Icons */
+        .social-icons a {
+            margin: 0 10px;
+            color: #fff;
+            font-size: 1.5rem;
+        }
+
+            .social-icons a:hover {
+                color: #e74c3c; /* Rouge */
+            }
+    </style>
+</head>
+<body>
+
+    <!-- Navbar -->
+    <header>
+        <div class="card">
+            <div style="width: 150px; height: 150px; border-radius: 50%; overflow: hidden; margin: 0 auto;">
+                <img src="~/images/logo.jpg" alt="Photo de profil" style="width: 100%; height: 100%; object-fit: cover;">
+            </div>
+        </div>
+    </header>
+
+    <section id="about">
+        <h2>
+            Découvrez qui je suis et ce que je fais
+        </h2>
+        <p>
+            Je suis Saad Loucifi, ingénieur d'État en informatique, passionné par le développement de solutions numériques et l'innovation. Mon objectif est de créer des outils simples et efficaces pour répondre à des besoins complexes.
+        </p>
+        <div class="social-icons">
+            <a href="https://www.linkedin.com/in/sa%C3%A2d-loucifi-83921727a/" target="_blank"><i class="fab fa-linkedin"></i></a>
+            <a href="https://www.instagram.com/saad.lcf/" target="_blank"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.facebook.com/profile.php?id=100007577568522" target="_blank"><i class="fab fa-facebook"></i></a>
+            <a href="https://github.com/saadlcf" target="_blank"><i class="fab fa-github"></i></a>
+        </div>
+
+        <!-- Button to download CV -->
+        <a href="~/cv/Scv.pdf" download>
+            <button class="download-btn">Télécharger mon CV</button>
+        </a>
+    </section>
+
+    <!-- Section Compétences -->
+    <section id="skills" class="container my-5" data-aos="fade-left">
+        <h2 class="section-title">Compétences</h2>
+        <div class="row">
+            <div class="col-md-4" data-aos="flip-left">
+                <div class="card">
+                    <div class="card-body">
+                        <h5> Langages ,Technologies et Frameworks</h5>
+                        <p>
+                            Html, Css, JavaScript, Bootstrap PHP,
+                            Symfony, Angular, Docker, Entity
+                            Framework , ASP.net ,C# ,Power bi.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4" data-aos="flip-up">
+                <div class="card">
+                    <div class="card-body">
+                        <h5>Base de données </h5>
+                        <p>
+                            MYSQL, NoSQL
+                            (MongoDB).
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4" data-aos="flip-right">
+                <div class="card">
+                    <div class="card-body">
+                        <h5>Méthodes de conception </h5>
+                        <p>UML, Merise.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4" data-aos="flip-right">
+                <div class="card">
+                    <div class="card-body">
+                        <h5> IDE de développement </h5>
+                        <p>
+                            Visual studio ,
+                            PHP Storm ,
+                            Visual studio code.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4" data-aos="flip-right">
+                <div class="card">
+                    <div class="card-body">
+                        <h5>Méthodologies agiles </h5>
+                        <p>Scrum , Prince2. </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4" data-aos="flip-right">
+                <div class="card">
+                    <div class="card-body">
+                        <h5>C.R.M </h5>
+                        <p>
+                            SalesForce, Microsoft Dynamic
+                            365.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4" data-aos="flip-right">
+                <div class="card">
+                    <div class="card-body">
+                        <h5>Systémes de contrôle de version </h5>
+                        <p>GIT.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Projets -->
+    <h2 class="section-title">Projets</h2>
+    <div class="row">
+        <div class="col-md-6" data-aos="zoom-in">
+            <div class="card">
+                <div class="card-body">
+                    <h5>Application Emailing</h5>
+                    <p>Développement d'une application web de gestion d'emails en masse. Technologies utilisées : C#, ASP.NET, SQL Server, Entity Framework.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6" data-aos="zoom-in">
+            <div class="card">
+                <div class="card-body">
+                    <h5>E-learning Platform</h5>
+                    <p>Création d'une plateforme d'apprentissage en ligne interactive offrant une diversité de cours. Technologies utilisées : HTML, CSS, Bootstrap, PHP, Symfony 6.3.1, Docker, GitHub, MySQL.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6" data-aos="zoom-in">
+            <div class="card">
+                <div class="card-body">
+                    <h5>Amo Tadamon Power BI Dashboard</h5>
+                    <p>Le projet de gestion des factures AMO TADAMON pour le CHU Mohammed VI d'Oujda vise à créer un tableau de bord interactif avec Power BI pour optimiser la gestion des factures. Technologies utilisées : SQL Server, Power BI, Trello, Méthodologie Agile Scrum.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    </section>
+
+    <!-- Section Expérience -->
+    <section id="experience" class="container my-5" data-aos="fade-up">
+        <h2 class="section-title">Expériences</h2>
+        <div class="row">
+            <div class="col-md-6" data-aos="fade-left">
+                <div class="card">
+                    <div class="card-body">
+                        <h5>Développeur Full Stack / Freelance </h5>
+                        <p>Développement et déploiement de solutions web en utilisant ASP.NET, React, et Node.js.</p>
+                        <small>Janvier 2023 - Présent</small>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6" data-aos="fade-right">
+                <div class="card">
+                    <div class="card-body">
+                        <h5>Développeur Power Bi / C.H.U oujda,Maroc</h5>
+                        <p>Création d'un tableau de bord interactif avec Power BI pour la gestion des factures du CHU Mohammed VI d'Oujda. Ce projet visait à optimiser la gestion des factures à travers des visualisations claires et des analyses approfondies. L'objectif était d'améliorer l'efficacité opérationnelle en facilitant la prise de décisions et en réduisant les erreurs de gestion. Utilisation de SQL Server, Power BI, et application de la méthodologie Agile Scrum pour le développement et la mise en œuvre.</p>
+                        <small>Février 2024 - Juin 2024</small>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Contact -->
+    <section id="contact" class="container my-5" data-aos="fade-up">
+        <h2 class="section-title">Contact</h2>
+        <form method="post" action="@Url.Action("SendMessage", "Message")">
+            <div class="mb-3">
+                <label for="name" class="form-label">Nom</label>
+                <input type="text" class="form-control" id="name" name="Name" placeholder="Entrez votre nom" required>
+            </div>
+            <div class="mb-3">
+                <label for="email" class="form-label">Email</label>
+                <input type="email" class="form-control" id="email" name="Email" placeholder="Entrez votre email" required>
+            </div>
+            <div class="mb-3">
+                <label for="message" class="form-label">Message</label>
+                <textarea class="form-control" id="message" name="Content" rows="4" placeholder="Votre message" required></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary d-block mx-auto">Envoyer</button>
+        </form>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 Saad Loucifi. Tous droits réservés.</p>
+    </footer>
+
+    <!-- JS Libraries -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+
+    <!-- Custom JS -->
+    <script>
+        AOS.init();
+    </script>
+</body>
+</html>

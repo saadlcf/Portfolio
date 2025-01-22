@@ -1,0 +1,62 @@
+﻿@model IEnumerable<SaadPortfolio.Models.Message>
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Messages reçus</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="container py-5">
+        <h1>Messages Reçus</h1>
+
+        <!-- Affichage des messages de confirmation ou d'erreur -->
+        @if (TempData["Message"] != null)
+        {
+            <div class="alert alert-success">
+                @TempData["Message"]
+            </div>
+        }
+        @if (TempData["Error"] != null)
+        {
+            <div class="alert alert-danger">
+                @TempData["Error"]
+            </div>
+        }
+
+        <!-- Affichage de la liste des messages -->
+        @if (!Model.Any())
+        {
+            <p>Aucun message reçu pour l'instant.</p>
+        }
+        else
+        {
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Nom</th>
+                        <th>Email</th>
+                        <th>Message</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var msg in Model)
+                    {
+                        <tr>
+                            <td>@msg.Id</td>
+                            <td>@msg.Name</td>
+                            <td>@msg.Email</td>
+                            <td>@msg.Content</td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        }
+
+        <a class="btn btn-primary mt-3" href="/Home/Index">Retour au Portfolio</a>
+    </div>
+</body>
+</html>

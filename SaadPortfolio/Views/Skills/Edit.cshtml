@@ -1,0 +1,16 @@
+﻿@model SaadPortfolio.Models.Skill
+
+<h2>Modifier une compétence</h2>
+
+<form asp-action="EditSkill" method="post">
+    <input type="hidden" name="Id" value="@Model.Id" />
+    <div class="form-group">
+        <label for="Name">Nom de la compétence</label>
+        <input type="text" class="form-control" id="Name" name="Name" value="@Model.Name" required />
+    </div>
+    <div class="form-group">
+        <label for="Level">Niveau</label>
+        <input type="text" class="form-control" id="Level" name="Level" value="@Model.Level" required />
+    </div>
+    <button type="submit" class="btn btn-primary">Modifier</button>
+</form>

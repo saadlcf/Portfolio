@@ -1,0 +1,16 @@
+﻿@model SaadPortfolio.Models.Skill
+
+<h2>Ajouter une nouvelle compétence</h2>
+
+<form asp-action="Create" method="post">
+    <!-- Assurez-vous que l'asp-action correspond à la méthode du contrôleur -->
+    <div class="form-group">
+        <label for="Name">Nom de la compétence</label>
+        <input type="text" class="form-control" id="Name" name="Name" value="@Model.Name" placeholder="Entrez le nom de la compétence" required />
+    </div>
+    <div class="form-group">
+        <label for="Level">Niveau de compétence</label>
+        <input type="text" class="form-control" id="Level" name="Level" value="@Model.Level" placeholder="Entrez le niveau de compétence" required />
+    </div>
+    <button type="submit" class="btn btn-primary">Ajouter la compétence</button>
+</form>

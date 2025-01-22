@@ -1,0 +1,42 @@
+﻿@model IEnumerable<SaadPortfolio.Models.Skill>
+
+<h2>Compétences</h2>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Nom</th>
+            <th>Niveau</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var skill in Model)
+        {
+            <tr>
+                <td>@skill.Name</td>
+                <td>@skill.Level</td>
+                <td>
+                    <a asp-action="EditSkill" asp-route-id="@skill.Id" class="btn btn-warning">Modifier</a>
+                    <form asp-action="DeleteSkill" method="post" style="display:inline;">
+                        <input type="hidden" name="id" value="@skill.Id" />
+                        <button type="submit" class="btn btn-danger">Supprimer</button>
+                    </form>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<h3>Ajouter une compétence</h3>
+<form asp-action="AddSkill" method="post">
+    <div class="form-group">
+        <label for="Name">Nom de la compétence</label>
+        <input type="text" class="form-control" id="Name" name="Name" required />
+    </div>
+    <div class="form-group">
+        <label for="Level">Niveau</label>
+        <input type="text" class="form-control" id="Level" name="Level" required />
+    </div>
+    <button type="submit" class="btn btn-primary">Ajouter</button>
+</form>

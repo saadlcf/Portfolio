@@ -1,0 +1,42 @@
+﻿@model SaadPortfolio.Models.Experience
+
+@{
+    ViewData["Title"] = "Supprimer l'expérience";
+}
+
+<h1>@ViewData["Title"]</h1>
+
+<h4>Êtes-vous sûr de vouloir supprimer cette expérience ?</h4>
+<hr>
+
+<div>
+    <h5>@Model.Company</h5>
+    <p>@Model.Role</p>
+    <p>@Model.Description</p>
+    <p>
+        Du
+        @if (Model.StartDate.HasValue)
+        {
+            @Model.StartDate.Value.ToString("dd/MM/yyyy")
+        }
+        else
+        {
+            <text>Non précisée</text>
+        }
+        au
+        @if (Model.EndDate.HasValue)
+        {
+            @Model.EndDate.Value.ToString("dd/MM/yyyy")
+        }
+        else
+        {
+            <text>En cours</text>
+        }
+    </p>
+</div>
+
+<form asp-action="DeleteConfirmed" method="post">
+    <input type="hidden" asp-for="Id" />
+    <button type="submit" class="btn btn-danger">Supprimer</button>
+    <a href="@Url.Action("Index")" class="btn btn-secondary">Annuler</a>
+</form>

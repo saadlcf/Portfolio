@@ -1,0 +1,58 @@
+﻿@model IEnumerable<SaadPortfolio.Models.Experience>
+
+@{
+    ViewData["Title"] = "Expériences Professionnelles";
+}
+
+<h1>Mes Expériences</h1>
+
+<p>
+    <a href="@Url.Action("Create")" class="btn btn-primary">Ajouter une nouvelle expérience</a>
+</p>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Entreprise</th>
+            <th>Poste</th>
+            <th>Date de début</th>
+            <th>Date de fin</th>
+            <th>Description</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var experience in Model)
+        {
+            <tr>
+                <td>@experience.Company</td>
+                <td>@experience.Role</td>
+                <td>
+                    @if (experience.StartDate.HasValue)
+                    {
+                        @experience.StartDate.Value.ToString("dd/MM/yyyy")
+                    }
+                    else
+                    {
+                        <span>Non spécifiée</span>
+                    }
+                </td>
+                <td>
+                    @if (experience.EndDate.HasValue)
+                    {
+                        @experience.EndDate.Value.ToString("dd/MM/yyyy")
+                    }
+                    else
+                    {
+                        <span>En cours</span>
+                    }
+                </td>
+                <td>@experience.Description</td>
+                <td>
+                    <a href="@Url.Action("Edit", new { id = experience.Id })" class="btn btn-warning">Modifier</a>
+                    <a href="@Url.Action("Delete", new { id = experience.Id })" class="btn btn-danger">Supprimer</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
