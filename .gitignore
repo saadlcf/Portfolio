@@ -1,0 +1,8 @@
+# Ignore Visual Studio folder
+.vs/
+
+# Ignore user-specific and temporary files
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
