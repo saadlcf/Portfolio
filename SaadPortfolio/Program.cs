@@ -1,15 +1,17 @@
-﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore;
 using SaadPortfolio.Data;
 using Microsoft.Extensions.DependencyInjection;
 
 var builder = WebApplication.CreateBuilder(args);
+builder.Services.AddDbContext<SaadPortfolioContext>(options =>
+    options.UseSqlServer(builder.Configuration.GetConnectionString("SaadPortfolioContext") ?? throw new InvalidOperationException("Connection string 'SaadPortfolioContext' not found.")));
 
-// Configurer le DbContext pour utiliser PostgreSQL avec la chaîne de connexion "DefaultConnection"
-builder.Services.AddDbContext<PortfolioDbContext>(options =>
-    options.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection") ?? throw new InvalidOperationException("Connection string 'DefaultConnection' not found.")));
-
-// Ajouter les services nécessaires
+// Ajouter les services n�cessaires
 builder.Services.AddControllersWithViews();
+
+// Ajouter la configuration de la cha�ne de connexion et du DbContext
+builder.Services.AddDbContext<PortfolioDbContext>(options =>
+    options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
 var app = builder.Build();
 
@@ -17,7 +19,7 @@ var app = builder.Build();
 if (!app.Environment.IsDevelopment())
 {
     app.UseExceptionHandler("/Home/Error");
-    // Le paramètre HSTS par défaut est de 30 jours. Vous pouvez vouloir changer cela pour des scénarios de production.
+    // Le param�tre HSTS par d�faut est de 30 jours. Vous pouvez vouloir changer cela pour des sc�narios de production.
     app.UseHsts();
 }
 
